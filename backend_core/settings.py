@@ -10,7 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,7 +44,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "api",
+    "backend_api",
+    "backend_core",
     "channels",
 ]
 
@@ -55,7 +61,7 @@ MIDDLEWARE = [
 
 CROS_ALLOW_ALL_ORIGINS = True
 
-ROOT_URLCONF = "core.urls"
+ROOT_URLCONF = "backend_core.urls"
 
 TEMPLATES = [
     {
@@ -73,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "core.wsgi.application"
+# WSGI_APPLICATION = "core.wsgi.application"
 
 
 # Database
@@ -139,6 +145,6 @@ CHANNEL_LAYERS = {
 
 
 # Google OAuth
-GOOGLE_CLIENT_ID = "your-client-id"
-GOOGLE_CLIENT_SECRET = "your-client-secret"
-REDIRECT_URI = "http://localhost:8000/auth/google/callback/"
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
+REDIRECT_URI = os.getenv("REDIRECT_URI")
