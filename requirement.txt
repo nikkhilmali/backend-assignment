@@ -1,0 +1,10 @@
+django
+channels
+daphne
+google-auth
+google-api-python-client
+djangorestframework
+django-cors-headers
+python-dotenv
+websockets
+requests

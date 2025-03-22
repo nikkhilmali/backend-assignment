@@ -30,7 +30,8 @@ SECRET_KEY = "django-insecure-0%%@wl3-b*s_#*r0e%l)t+g^wio)u$%1lq6m(3&z8xj__z)#=^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]  
+CORS_ALLOW_ALL_ORIGINS = True 
 
 
 # Application definition
@@ -59,7 +60,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CROS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = "backend_core.urls"
 
@@ -136,7 +136,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # Channels settings
-ASGI_APPLICATION = "backend_assignment.asgi.application"
+ASGI_APPLICATION = "backend_api.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels.layers.InMemoryChannelLayer",
