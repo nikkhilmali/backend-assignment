@@ -117,44 +117,4 @@ Run it: `./start.sh`
   }
   ```
 
-## 🧪 Testing the WebSocket
-
-You can use the included test script to test the WebSocket functionality:
-
-```
-python test.py
-```
-
-Make sure to update the WebSocket URL in `test.py` if you're using a different port or host.
-
-## 🚢 Deployment
-
-### Prepare for deployment
-
-1. Update `ALLOWED_HOSTS` in `settings.py` with your domain
-2. Set `DEBUG=False` in your environment variables
-3. Update `REDIRECT_URI` in Google Cloud Console and environment variables
-
-### Deploy on Render.com
-
-1. Connect your GitHub repository
-2. Set build command: `pip install -r requirements.txt`
-3. Set start command: `daphne -b 0.0.0.0 -p $PORT backend_api.asgi:application`
-4. Add environment variables
-
-### Deploy on Railway.app
-
-1. Connect your GitHub repository
-2. Set start command: `daphne -b 0.0.0.0 -p $PORT backend_api.asgi:application`
-3. Add environment variables
-
-## 🔐 Security Considerations
-
-- Store sensitive information in environment variables, not in the codebase
-- Use HTTPS in production
-- Implement proper error handling and validation
-- Consider implementing token refresh for Google OAuth
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 📄 [Postman Collection](https://app.getpostman.com/join-team?invite_code=a1742535fb9c9d9a734fb99dad5d11553c74b848e485376d011378e4e01c67fa&target_code=16856f323b6fe65ea9d87b0171af9e15)
