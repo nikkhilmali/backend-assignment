@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Django (ASGI with Daphne)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/venv/bin/daphne",
+            "args": [
+                "-b",
+                "0.0.0.0",
+                "-p",
+                "8001",
+                "backend_api.asgi:application"
+            ],
+            "django": true,
+            "autoStartBrowser": false
+        }
+    ]
+}

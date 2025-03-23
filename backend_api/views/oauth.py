@@ -45,4 +45,4 @@ def google_callback(request):
 
     user_info = requests.get(url=Constants.GOOGLE_USER_INFO_URL, headers={"Authorization": f"Bearer {access_token}"}, timeout=5).json()
 
-    return Response(user_info)
+    return Response(data={"user_info":user_info, "access_token":access_token})
